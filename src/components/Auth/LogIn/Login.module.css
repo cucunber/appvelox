@@ -1,0 +1,122 @@
+.wrapper{
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 350px;
+}
+
+.formTitle {
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 33px;
+    text-align: center;
+    color: var(--text);
+    margin: 10px 0;
+    user-select: none;
+}
+
+.formSubtitle {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--text);
+    margin: 5px 0;
+    user-select: none;
+}
+
+.ligthBlue {
+    color: var(--light-blue);
+    text-decoration: underline;
+    transition: var(--transition);
+}
+
+.ligthBlue:hover{
+    color: var(--light-dark-blue);
+}
+
+.ligthBlue:visited{
+    color: var(--light-blue);
+}
+
+.formInput {
+    border: 0.5px solid var(--text);
+    border-radius: 5px;
+    padding: 12px 14px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.left{
+    align-self: flex-start;
+}
+
+.passwordInput {
+    width: 100%;
+    position: relative;
+}
+
+.passwordInput svg {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    fill: var(--purple);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.passwordInput svg.activePass {
+    fill: var(--dark-purple);
+}
+
+.formSubmit {
+    margin: 15px 0;
+    width: 100%;
+    padding: 12px 0;
+    background: var(--purple);
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.formSubmit:disabled{
+    filter: grayscale(0.5);
+}
+
+.formSubmit:hover:not(:disabled){
+    background: var(--dark-purple);
+}
+
+.errors{
+    color: var(--error);
+    transition: var(--transition);
+    text-align: center;
+    transform: scale(0);
+}
+
+.errors.activeError{
+    transform: scale(1);
+}
+
+@media(max-width: 540px){
+    .form {
+        min-width: 100%;
+    }
+    .formSubtitle {
+        text-align: center;
+    }
+}

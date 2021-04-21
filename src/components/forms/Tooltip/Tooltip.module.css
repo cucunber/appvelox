@@ -1,0 +1,21 @@
+.tooltip{
+    position: absolute;
+    padding: 5px;
+    border-radius: 10px;
+    background: var(--tooltip);
+    transition: var(--transition);
+    opacity: 0;
+    top:20px;
+    left: -20px;
+    pointer-events: none;
+}
+
+.tooltip span{
+    text-align: center;
+    font-size: 12px;
+    color: var(--light-text);
+}
+
+.tooltip.active{
+    opacity: 1;
+}

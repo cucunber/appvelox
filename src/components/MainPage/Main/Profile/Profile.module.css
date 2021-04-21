@@ -1,0 +1,116 @@
+.wrapper {
+    padding: 0 20px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.appointments {
+    flex: 0 0 25%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.appointmentsRow {
+    height: 100%;
+    flex: 0 0 90%;
+    display: flex;
+}
+
+.appointmentsMore {
+    height: 100%;
+    flex: 0 0 10%;
+    display: grid;
+    place-items: center;
+}
+
+.more {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.more h2 {
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: var(--text);
+}
+
+.link {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: var(--light-blue)!important;
+    text-decoration: underline;
+}
+
+.newTitle {
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--text);
+}
+
+.ecardOptions {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list>li {
+    width: 100%;
+    padding-left: 20px;
+    margin: 5px 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--text);
+    position: relative;
+}
+
+.list>li::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--grey);
+    transition: var(--transition);
+    transform: translateY(-50%);
+}
+
+.list>li:hover::before {
+    background: var(--light-blue);
+}
+
+.ecardText {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--text);
+}
+
+.ecard{
+    height: 100%;
+}
+
+@media(max-width:1024px){
+    .appointments{
+        flex-direction: column;
+    }
+    .appointmentsMore{
+        width: 100%;
+    }
+    .more{
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .more h2{
+        margin-right: 10px;
+    }
+}

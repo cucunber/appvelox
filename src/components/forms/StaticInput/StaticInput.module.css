@@ -1,0 +1,49 @@
+.wrapper{
+    position: relative;
+    width: 100%;
+}
+
+.formInput {
+    border: 0.5px solid var(--text);
+    border-radius: 5px;
+    padding: 12px 14px;
+    width: 100%;
+    margin: 10px 0;
+    transition: var(--transition);
+} 
+
+.wrapper.error .formInput{
+    border: 0.5px solid var(--error);
+}
+
+.wrapper.error .passLabel{
+    color: var(--error);
+}
+
+.passwordInput {
+    width: 100%;
+    position: relative;
+}
+
+.passLabel{
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    transition: var(--transition);
+    padding: 0 10px;
+    user-select: none;
+    background: linear-gradient(180deg, transparent 0%, transparent 45%, var(--bg) 46%, var(--bg) 51%, transparent 52%, transparent 100%);
+}
+
+.passLabel.activeLabel{
+    left: 10px;
+    top: 17.5%;
+}
+
+@media(max-width:540px){
+    .formInput{
+        padding: 5px 10px;
+        margin: 5px 0;
+    }
+}

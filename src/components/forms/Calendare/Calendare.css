@@ -1,0 +1,244 @@
+.MyCalendare {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.MyCalendare * {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently */
+}
+
+.mcdp-container {
+    height: 100%;
+    background: var(--grey);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+}
+
+.mcdpc-head {
+    height: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: var(--purple);
+}
+
+.mcdpc-body {
+    flex: 0 0 80%;
+    width: 100%;
+}
+
+.mcdpch-button {
+    flex: 0 0 5%;
+    width: 35px;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.mcdpchb-inner:hover>span {
+    border-color: var(--grey)!important;
+}
+
+.mcdpchb-inner:hover {
+    cursor: pointer;
+}
+
+.mcdpchb-inner {
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -17px;
+    margin-top: -17px;
+    transition: var(--transition);
+}
+
+.mcdpchbi-right-arrows:after, .mcdpchbi-left-arrows:after, .mcdpchbi-right-arrow, .mcdpchbi-right-arrows, .mcdpchbi-left-arrow, .mcdpchbi-left-arrows {
+    display: block;
+    float: left;
+    width: 6px;
+    height: 6px;
+    border-left: 2px solid var(--light-text);
+    border-bottom: 2px solid var(--light-text);
+    position: absolute;
+    transition: var(--transition);
+}
+
+.mcdpchbi-right-arrow, .mcdpchbi-right-arrows, .mcdpchbi-left-arrow, .mcdpchbi-left-arrows {
+    transform: rotate(45deg);
+    left: 50%;
+    top: 50%;
+    margin-left: -2px;
+    margin-top: -4px;
+}
+
+.mcdpchbi-right-arrows, .mcdpchbi-right-arrow {
+    transform: rotate(225deg);
+    margin-left: -4px;
+}
+
+.mcdpchbi-right-arrows:after, .mcdpchbi-left-arrows:after {
+    content: '';
+}
+
+.mcdpchbi-left-arrows {
+    margin-left: -5px;
+}
+
+.mcdpchbi-right-arrows {
+    margin-left: -2px;
+}
+
+.mcdpchbi-right-arrows:after, .mcdpchbi-left-arrows:after {
+    left: 3px;
+    top: -5px
+}
+
+.mcdpch-container {
+    flex: 0 0 20%;
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.mcdpchc-month {
+    width: 100%;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--light-text);
+    font-weight: 200px;
+    text-align: center;
+}
+
+.ccc-month, .ccc-head, .ccch-name, .ccc-body, .ccdc-day span, .ccdc-day, .cc-day-container, .cc-container {
+    position: relative;
+    display: block;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ccc-container {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px 10px;
+}
+
+.ccc-month {
+    height: 24px;
+    width: 100%;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 26px;
+    color: #666;
+}
+
+.ccc-head {
+    height: 36px;
+    width: 100%;
+}
+
+.ccch-name {
+    width: 14.285%;
+    height: 24px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #666;
+    font-size: 9px;
+    text-align: center;
+}
+
+.ccc-body {
+    height: 100%;
+    width: 100%;
+}
+
+.cc-day-container {
+    width: 14.285%;
+    height: 16.6666%;
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.cc-day-container.active.highlight-blue{
+    border: 2px solid var(--light-blue);
+}
+
+.cc-day-container.active {
+    background: var(--bg);
+}
+
+.ccdc-day {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    font-weight: 300;
+    color: #444;
+    text-align: center;
+    position: relative;
+}
+
+.ccdc-day:hover {
+    cursor: pointer;
+}
+
+.ccdc-day span {
+    width: 30px;
+    height: 30px;
+    left: 5px;
+    top: 10px;
+    font-family: Rubik;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    color: var(--black)
+}
+
+.cc-day-container.disabled {
+    pointer-events: none;
+}
+
+.cc-day-container.disabled {
+    background: var(--grey)
+}
+
+.appoints {
+    width: 20px;
+    height: 20px;
+    color: var(--light-text);
+    border-radius: 50%;
+    background: var(--light-blue);
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 14px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.disabled .appoints{
+    background: var(--dark-grey);    
+}

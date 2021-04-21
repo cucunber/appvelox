@@ -1,0 +1,158 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 12fr 8fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "form img";
+}
+
+.register {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--dark-blue);
+    z-index: 5;
+    padding: 20px;
+    transition: var(--transition);
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+}
+
+.register.show {
+    opacity: 1;
+}
+
+.loginWrapper {
+    grid-area: form;
+    width: 100%;
+    position: relative;
+}
+
+.imgWrapper {
+    grid-area: img;
+    width: 100%;
+    background: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 40px;
+}
+
+.wellcomTitle {
+    flex: 0 0 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.wellcomTitle h2 {
+    width: 100%;
+    font-size: 28px;
+    line-height: 33px;
+    color: var(--light-text);
+    text-align: center;
+    transition: var(--transition);
+    position: absolute;
+}
+
+.wellcomTitle h2.show1, .wellcomTitle h2.show2 {
+    left: 5px;
+}
+
+.wellcomTitle h2.hide1, .wellcomTitle h2.hide2 {
+    left: 150%;
+}
+
+.imgBox {
+    flex: 0 0 60%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.imgBox img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.imgBox img.show1, .imgBox img.show2 {
+    left: 5px;
+}
+
+.imgBox img.hide1, .imgBox img.hide2 {
+    left: 150%;
+}
+
+.wellcomSubtitle {
+    display: flex;
+    justify-content: center;
+}
+
+.wellcomSubtitle h4 {
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--light-text);
+    text-align: center;
+}
+
+.loginBody {
+    padding: 25px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.loginBody>* {
+    width: 100%;
+}
+
+.mainForm {
+    flex: 0 0 89%;
+}
+
+.preload {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    transition: var(--transition);
+    pointer-events: none;
+}
+
+.preload.showLoader {
+    opacity: 1;
+}
+
+@media(max-width: 1024px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas: "form";
+    }
+    .imgWrapper {
+        display: none;
+    }
+}
+
+@media(max-width: 540px) {
+    .loginBody {
+        padding: 15px 20px;
+    }
+    .mainForm {
+        flex: 0 0 80%;
+    }
+}

@@ -1,0 +1,144 @@
+.wrapper {
+    background: var(--light-blue);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.headerTitle {
+    flex: 0 0 60%;
+    padding-left: 40px;
+    font-size: 28px;
+    line-height: 33px;
+    color: var(--light-text);
+}
+
+.headerBtns{
+    display: flex;
+    flex: 0 0 30%;
+    justify-content: flex-end;
+}
+
+.headerBtn{
+    margin-right: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.msgIcon{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 6px;
+    height: 6px;
+    background: var(--error);
+    border-radius: 50%;
+    transition: var(--transition);
+    opacity: 0;
+}
+
+.msgIcon.hasMsg{
+    animation: newMsg 3s ease infinite;
+}
+
+@keyframes newMsg{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.headerBtn svg{
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.userIcon{
+    margin: 7px;
+    padding: 2px;
+    flex: 0 0 4%;
+    border-radius: 50%;
+    border: 2px solid var(--bg);
+    overflow: hidden;
+}
+
+.userIcon img{
+    width:100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.dropdownHeader{
+    position: relative;
+}
+
+.dropdownIcon{
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    background: var(--bg);
+    margin-left: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.activeDrop .dropdownIcon{
+    border-radius: 4px 4px 0 0px;
+}
+
+
+.dropdownIcon::before,
+.dropdownIcon::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 2px;
+    border-radius: 1px;
+    background: var(--light-blue);
+    transition: var(--transition);
+}
+
+.dropdownIcon::before{
+    transform: translate(-75%, -70%) rotate(45deg)
+}
+
+.dropdownIcon::after{
+    transform: translate(-25%, -70%) rotate(-45deg)
+}
+
+.activeDrop .dropdownIcon::before{
+    transform: translate(-75%, -70%) rotate(-45deg)
+}
+
+.activeDrop .dropdownIcon::after{
+    transform: translate(-25%, -70%) rotate(45deg)
+}
+
+.dropdownMenu{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background: var(--light-text);
+    border-radius: 10px 0 10px 10px;
+    transition: var(--transition);
+    left: -51px;
+    transform-origin: top right;
+    transform: scale(0);
+}
+
+.activeDrop .dropdownMenu{
+    transform: scale(1);
+}
+
+.dropdownMenu *{
+    margin-bottom: 5px;
+}

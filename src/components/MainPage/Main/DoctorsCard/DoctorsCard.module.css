@@ -1,0 +1,261 @@
+.wrapper {
+    margin-right: 20px;
+    padding: 15px 20px;
+    height: 100%;
+    border-radius: 5px;
+    flex: 0 0 47%;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    box-shadow: 0px 0px 5px var(--grey);
+    overflow: hidden;
+    position: relative;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.date {
+    flex: 0 0 50%;
+}
+
+.date h3 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--text);
+    margin-bottom: 5px;
+}
+
+.date p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text);
+}
+
+.doctor {
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+}
+
+.doctorImg {
+    flex: 0 0 20%;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: scale(0.8);
+}
+
+.doctorImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doctorInfo {
+    padding: 10px 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.doctorInfo h4 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--text);
+}
+
+.doctorInfo p {
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--grey);
+}
+
+.btns {
+    flex: 0 0 30%;
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cancel {
+    padding: 12px 15px;
+    background: var(--purple);
+    border-radius: 5px;
+    transition: var(--transition);
+    color: var(--light-text);
+}
+
+.cancel:hover{
+    background: var(--dark-purple);
+}
+
+.optionBtns{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.accept{
+    width: 60px;
+    height: 60px;
+    transform: scale(0.8);
+    border-radius: 50%;
+    border: 5px solid var(--accept);
+    position: relative;
+}
+
+.decline{
+    width: 60px;
+    height: 60px;
+    transform: scale(0.8);
+    border-radius: 50%;
+    border: 5px solid var(--error);
+    position: relative;
+}
+
+.decline::before,
+.decline::after{
+    content: '';
+    position: absolute;
+    transition: var(--transition);
+    background: var(--error);
+    width: 30px;
+    height: 5px;
+    top: 50%;
+    left: 50%;
+    border-radius: 2.5px;
+}
+
+.decline::before{
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+.decline::after{
+    transform: translate(-50%,-50%) rotate(-45deg)
+}
+
+.accept::before,
+.accept::after{
+    content: '';
+    position: absolute;
+    transition: var(--transition);
+    background: var(--accept);
+}
+
+.accept::before{
+    width: 15px;
+    height: 5px;
+    top: 60%;
+    left: 45%;
+    transform: translate(-90%, -50%) rotate(45deg);
+    border-radius: 2.5px;
+}
+
+.accept::after{
+    width: 30px;
+    height: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -50%) rotate(-45deg);
+    border-radius: 2.5px;
+}
+
+.accept:hover::before{
+    animation: acceptAnimBefore 1s cubic-bezier(0,.35,1,.66) 0.8s
+}
+
+.accept:hover::after{
+    animation: acceptAnimAfter 0.8s cubic-bezier(.78,.01,.99,.64)
+
+}
+
+.decline:hover::after{
+    animation: declineAnimAfter 1s ease;
+}
+
+.decline:hover::before{
+    animation: declineAnimBefore 1s ease;
+}
+
+@keyframes declineAnimBefore{
+    0%{
+        width:30px;
+        transform: translate(-50%,-50%) rotate(45deg);
+    }
+    50%{
+        width:10px;
+        transform: translate(-50%,-50%) rotate(405deg);
+    }
+    100%{
+        width:30px;
+        transform: translate(-50%,-50%) rotate(765deg);
+    }
+}
+
+@keyframes declineAnimAfter{
+    0%{
+        width:30px;
+        transform: translate(-50%,-50%) rotate(-45deg);
+    }
+    50%{
+        width:15px;
+        transform: translate(-50%,-50%) rotate(315deg);
+    }
+    100%{
+        width:30px;
+        transform: translate(-50%,-50%) rotate(675deg);
+    }
+}
+
+@keyframes acceptAnimBefore{
+    0%{
+        top: 60%;
+        transform: translate(-90%, -50%) rotate(45deg);
+    }
+    50%{
+        top: 20%;
+        transform: translate(-90%, -50%) rotate(765deg);
+    }
+    100%{
+        top: 60%;
+        transform: translate(-90%, -50%) rotate(1485deg);
+    }
+}
+
+@keyframes acceptAnimAfter{
+    0%{
+        transform: translate(-30%, -50%) rotate(-45deg);
+    }
+    50%{
+        transform: translate(-30%, -50%) rotate(-85deg);
+    }
+    100%{
+        transform: translate(-30%, -50%) rotate(-45deg);
+    }
+}
+
+.wrapper:hover{
+    transform: scale(1.05);
+}
+
+.preloader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    transition: var(--transition);
+    pointer-events: none;
+}
+
+.preloader.showPreloader {
+    opacity: 1;
+}

@@ -1,0 +1,488 @@
+.wrapper {
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.inputs>* {
+    margin: 0 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 350px;
+    overflow: hidden;
+}
+
+.formTitle {
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 33px;
+    text-align: center;
+    color: var(--text);
+    margin: 10px 0;
+    user-select: none;
+}
+
+.formSubtitle {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--text);
+    margin: 5px 0;
+    user-select: none;
+}
+
+.ligthBlue {
+    color: var(--light-blue);
+    text-decoration: underline;
+    transition: var(--transition);
+}
+
+.ligthBlue:hover {
+    color: var(--light-dark-blue);
+}
+
+.ligthBlue:visited {
+    color: var(--light-blue);
+}
+
+.formInput {
+    border: 0.5px solid var(--text);
+    border-radius: 5px;
+    padding: 12px 14px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.left {
+    align-self: flex-start;
+}
+
+.formSubmit {
+    margin: 15px 0;
+    width: 100%;
+    padding: 12px 0;
+    background: var(--purple);
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.formSubmit:disabled {
+    filter: grayscale(0.5);
+}
+
+.formSubmit:hover:not(:disabled) {
+    background: var(--dark-purple);
+}
+
+.steps {
+    display: flex;
+    align-items: center;
+}
+
+.stepRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stepCircle {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.errors {
+    color: var(--error);
+    transition: var(--transition);
+    text-align: center;
+    transform: scale(0);
+}
+
+.circleName {
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: contrast(5) invert(1);
+}
+
+.circleNameDisactive {
+    color: var(--grey);
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 17px;
+}
+
+.stepName {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: var(--purple);
+}
+
+.stepName.disactive {
+    color: var(--grey)
+}
+
+.validateRow {
+    align-self: flex-start;
+}
+
+.validate {
+    display: flex;
+    margin: 5px 0;
+    color: var(--error);
+    padding-left: 20px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.validate.accept {
+    color: var(--accept);
+}
+
+.before, .after {
+    position: absolute;
+    top: 50%;
+    left: 2.5px;
+    width: 10px;
+    height: 2px;
+    background: var(--error);
+    transition: var(--transition);
+}
+
+.after {
+    transform: translate(0, -50%) rotate(45deg);
+}
+
+.before {
+    transform: translate(0, -50%) rotate(-45deg);
+}
+
+.accept .after, .accept .before {
+    background: var(--accept);
+}
+
+.accept .after {
+    width: 5px;
+    transform: translate(-1.5px, -10%) rotate(45deg);
+}
+
+.accept .before {
+    width: 12px;
+    transform: translate(1.5px, -50%) rotate(-45deg);
+}
+
+input[type="checkbox"]:checked, input[type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked+label, input[type="checkbox"]:not(:checked)+label {
+    display: inline-block;
+    position: relative;
+    padding-left: 28px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked+label:before, input[type="checkbox"]:not(:checked)+label:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--purple);
+    background-color: var(--bg);
+}
+
+input[type="checkbox"]:checked+label:before, input[type="checkbox"]:not(:checked)+label:before {
+    border-radius: 5px;
+}
+
+input[type="checkbox"]:checked+label:after, input[type="checkbox"]:not(:checked)+label:after {
+    content: "";
+    position: absolute;
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+}
+
+input[type="checkbox"]:checked+label:after, input[type="checkbox"]:not(:checked)+label:after {
+    left: 4px;
+    top: 5px;
+    width: 10px;
+    height: 6px;
+    border-left: 3px solid var(--purple);
+    border-bottom: 3px solid var(--purple);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+input[type="checkbox"]:not(:checked)+label:after {
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked+label:after {
+    opacity: 1;
+}
+
+.check {
+    margin: 10px 0;
+}
+
+.formSubtitle.tag {
+    padding-left: 20px;
+    position: relative;
+}
+
+.formSubtitle.tag::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 1px;
+    background: var(--text);
+    top: 50%;
+    left: 5px;
+    transform: translate(0, -50%);
+}
+
+.itemsWrapper {
+    max-width: 350px;
+}
+
+.slider {
+    display: flex;
+    width: 720px;
+    position: relative;
+    left: 0;
+    transition: var(--transition);
+}
+
+.sliderItem {
+    flex: 0 0 50%;
+}
+
+.slider.disactiveValid {
+    left: -102%;
+}
+
+.errors.activeError {
+    transform: scale(1);
+}
+
+.notMatch {
+    text-align: center;
+    color: var(--error);
+    transition: var(--transition);
+    transform: scale(0);
+}
+
+.notMatch.activeNotMatch {
+    transform: scale(1);
+}
+
+.notMatchEmail {
+    text-align: center;
+    color: var(--error);
+    transition: var(--transition);
+    transform: scale(0);
+    display: none;
+}
+
+.notMatchEmail.activeNotMatch {
+    transform: scale(1);
+    display: block;
+}
+
+.nextBtn {
+    margin: 15px 0;
+    width: 347px;
+    padding: 12px 0;
+    background: var(--purple);
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.nextBtn:disabled {
+    filter: grayscale(0.7);
+}
+
+.nextBtn:hover:not(:disabled) {
+    background: var(--dark-purple);
+}
+
+.formsWrapper {
+    max-width: 350px;
+}
+
+.formsSlider {
+    width: calc(350px*3);
+    display: flex;
+    position: relative;
+    transition: var(--transition);
+}
+
+.formsSliderItem {
+    display: flex;
+    align-items: flex-start;
+    width: 350px;
+}
+
+.lineWrapper {
+    width: 40px;
+    height: 2px;
+    background: var(--grey);
+    overflow: hidden;
+    border-radius: 1px;
+    position: relative;
+    bottom: 7px;
+}
+
+.lineBack {
+    width: 0;
+    height: 2px;
+    background: var(--purple);
+    transition: var(--transition);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.lineBack.full {
+    width: 100%;
+}
+
+.sexPicker {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sexPickerBody {
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.sexCircle {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    border: 0.5px solid var(--text);
+    transition: var(--transition);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+
+.sexCircle span {
+    transition: var(--transition);
+    color: var(--purple)
+}
+
+.sexCircle:not(.sexActive):hover span {
+    font-size: 18px;
+}
+
+.sexCircle.sexActive {
+    background: var(--purple);
+    border-width: 0px;
+}
+
+.sexCircle.sexActive span {
+    color: var(--light-text)
+}
+
+@media(max-width: 540px) {
+    .form {
+        max-width: 100%;
+        min-width: 0;
+    }
+    .formTitle{
+        font-size: 20px;
+        line-height: 22px;
+        margin: 5px 0;
+    }
+    .inputs>* {
+        margin: 0 5px;
+    }
+    .formSubtitle {
+        text-align: center;
+    }
+    .formSubmit {
+        width: 60%;
+    }
+    .formsWrapper {
+        max-width: 500px;
+    }
+    .slider {
+        width: 1000px
+    }
+    .slider.disactiveValid {
+        left: -100%;
+    }
+    .lineWrapper {
+        width: 20px;
+    }
+    .stepCircle{
+        width: 20px;
+        height: 20px;
+    }
+    .stepName {
+        font-weight: 300;
+        font-size: 10px;
+        height: 30px;
+        max-width: 80px;
+    }
+}

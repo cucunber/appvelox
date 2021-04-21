@@ -1,0 +1,31 @@
+.style {
+    width: 40px;
+    height: 40px;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 33px;
+    text-align: center;
+    color: var(--text);
+    padding: 4px;
+    border: 1px solid var(--text);
+    border-radius: 5px;
+}
+
+.style.error{
+    color: var(--error);
+    border: 1px solid var(--error);
+}
+
+@media(max-width: 540px){
+    .style {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media(max-width: 350px){
+    .style {
+        width: 30px;
+        height: 30px;
+    }
+}

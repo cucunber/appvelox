@@ -1,0 +1,109 @@
+.header {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--grey);
+}
+
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.headerRow h4 {
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+}
+
+.rowRightSide {
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    transition: var(--transition);
+    border: 1px solid var(--purple);
+    position: relative;
+    align-items: center;
+}
+
+.rowRightSide::before, .rowRightSide::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55%;
+    height: 110%;
+    background: var(--bg);
+}
+
+.rowRightSide::before {
+    left: -5px;
+}
+
+.rowRightSide::after {
+    right: -5px;
+}
+
+.rowRightSide.removeAnim::before, .rowRightSide.removeAnim::after {
+    animation: hideborder 1s ease-in-out forwards;
+}
+
+.rowRightSide.removeAnim.stop::before, .rowRightSide.removeAnim.stop::after {
+    animation-play-state: paused;
+}
+
+@keyframes hideborder {
+    0% {
+        width: 55%;
+        height: 110%;
+    }
+    25% {
+        width: 5%;
+        height: 110%;
+    }
+    50% {
+        width: 0%;
+        height: 0;
+    }
+    75% {
+        width: 5%;
+        height: 110%;
+    }
+    100% {
+        width: 55%;
+        height: 110%;
+    }
+}
+
+.rowRightSide svg {
+    fill: var(--purple);
+    margin-right: 14px;
+    position: relative;
+    z-index: 2;
+}
+
+.rowRightSide h4 {
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--purple);
+    text-align: center;
+    z-index: 2;
+}
+
+@media(max-width: 540px){
+    .headerRow {
+        flex-direction: column;
+    }
+
+    .headerRow  h4{
+        padding-bottom: 5px;
+    }
+
+    .rowRightSide{
+        padding: 5px;
+    }
+
+    .header {
+        padding-bottom: 10px;
+    }
+}

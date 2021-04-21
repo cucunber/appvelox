@@ -1,0 +1,108 @@
+.wrapper {
+    flex: 0 0 50%;
+    height: 184px;
+    padding: 20px 20px 0 0;
+}
+
+.body {
+    height: 100%;
+    transition: var(--transition);
+    background: var(--bg);
+    box-shadow: 0px 0px 5px var(--grey);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    display: flex;
+    overflow: hidden;
+}
+
+.active .body{
+    border: 2px solid var(--light-blue);
+}
+
+.svgBody {
+    flex: 0 0 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.svgBody svg{
+    transition: var(--transition);
+    fill: var(--grey);
+    position: relative;
+    z-index: 1;
+}
+
+.svgBody::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    background: var(--light-blue);
+    transition: var(--transition);
+    width: 100%;
+}
+
+.active .svgBody svg{
+    fill: var(--light-text);
+}
+
+.active .svgBody::before{
+    left: 0;
+}
+
+.info {
+    width: 100%;
+    padding: 15px 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    flex: 0 0 15%;
+    width: 100%;
+
+}
+
+.underline{
+    position: relative;   
+    width: 100%;
+    height: 2px;
+    border-radius: 1px;
+    background: var(--grey); 
+    overflow: hidden;
+}
+
+.underline::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    border-radius: 1px;
+    background: var(--light-blue);
+    width: 0;
+    transition: var(--transition);
+}
+
+.active .underline::before{
+    width: 100%;
+}
+
+.title h1 {
+    padding-bottom: 7px;
+    font-size: 24px;
+    line-height: 33px;
+    color: var(--text);
+}
+
+.items{
+    flex: 0 0 85%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
