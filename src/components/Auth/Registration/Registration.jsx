@@ -326,10 +326,9 @@ export default function Registration(props) {
     const [height, setHeight] = React.useState(350);
     useEffect(() => { setHeight(document.getElementById('form').clientWidth) })
 
-    console.log(height)
     return (
         <section className={s.wrapper}>
-            {registered && <Redirect to="/" />}
+            {registered && <Redirect to="/auth" />}
             <main className={s.main}>
                 <h2 className={s.formTitle}>Регистрация</h2>
                 <h4 className={s.formSubtitle}>У Вас уже есть аккаунт? <NavLink to="/" className={`${s.formSubtitle} ${s.ligthBlue}`} >Войти</NavLink ></h4>

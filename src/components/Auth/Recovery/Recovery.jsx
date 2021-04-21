@@ -84,9 +84,9 @@ export default function Recovery(props) {
                     {validators.map((item, key) => <Validate key={`val${key}`} name={item} accept={flags[key]} />)}
                 </div>
                 <div className={`${s.errors} ${error.status && s.activeError}`}>{error.msg}</div>
-                <input disabled={(pass1 && pass2 && lower && upper && number && length) ? false : true} type="submit" className={s.formSubmit} value="Войти" />
+                <input disabled={(pass1 && pass2 && lower && upper && number && length) ? false : true} type="submit" className={s.formSubmit} value="Изменить пароль" />
                 <div className={`${s.okey} ${changed ? s.showMsg : ""}`}>Пароль успешно изменен. Перенаправляем на страницу входа...</div>
-                {changed && <Redirect to="/"/>}
+                {changed && <Redirect to="/auth"/>}
             </form>
         </main>
     )

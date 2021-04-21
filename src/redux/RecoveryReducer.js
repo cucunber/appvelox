@@ -66,6 +66,7 @@ export const checkCode = (code, checkCode) => (dispatch) => {
         dispatch(setInit(false))
         dispatch(setError({status:false}))
         dispatch(setConfirmedCode(true))
+        setTimeout(()=>dispatch(setConfirmedCode(false)),2000)
     }).catch((data)=>{
         dispatch(setInit(false))
         dispatch(setError(data))
@@ -80,6 +81,7 @@ export const setPassword = (pass1, pass2) => (dispatch) =>{
             dispatch(setInit(false))
             dispatch(setError({status:false}))
             dispatch(ChangePass(data))})
+            setTimeout(()=>dispatch(ChangePass(false)), 3000)
     }else{
         dispatch(setError({
             status: true,

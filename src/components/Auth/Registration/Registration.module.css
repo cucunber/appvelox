@@ -310,7 +310,7 @@ input[type="checkbox"]:checked+label:after {
 }
 
 .slider.disactiveValid {
-    left: -102%;
+    left: -100%;
 }
 
 .errors.activeError {

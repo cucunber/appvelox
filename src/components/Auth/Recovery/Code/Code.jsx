@@ -76,7 +76,7 @@ export default function Code() {
     
     return (
         <main className={`${s.wrapper} ${error ? s.error : ""}`}>
-            {confirmed && <Redirect to="/recovery" />}
+            {confirmed && <Redirect to="/auth/recovery" />}
             <form onSubmit={handlerSubmit} onKeyDown={(e) => e.keyCode === 13 && handlerSubmit(e)} className={s.form}>
                 <h2 className={s.formTitle}>Восстановление пароля</h2>
                 <h4 className={s.formSubtitle}>На ваш номер выслан код восстановления</h4>
