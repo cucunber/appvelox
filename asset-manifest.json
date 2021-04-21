@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/appvelox/static/css/main.dac21b4e.chunk.css",
+    "main.js": "/appvelox/static/js/main.668ef0e1.chunk.js",
+    "main.js.map": "/appvelox/static/js/main.668ef0e1.chunk.js.map",
+    "runtime-main.js": "/appvelox/static/js/runtime-main.33ce62f2.js",
+    "runtime-main.js.map": "/appvelox/static/js/runtime-main.33ce62f2.js.map",
+    "static/js/2.7f45e654.chunk.js": "/appvelox/static/js/2.7f45e654.chunk.js",
+    "static/js/2.7f45e654.chunk.js.map": "/appvelox/static/js/2.7f45e654.chunk.js.map",
+    "static/js/3.9d9b5785.chunk.js": "/appvelox/static/js/3.9d9b5785.chunk.js",
+    "static/js/3.9d9b5785.chunk.js.map": "/appvelox/static/js/3.9d9b5785.chunk.js.map",
+    "index.html": "/appvelox/index.html",
+    "static/css/main.dac21b4e.chunk.css.map": "/appvelox/static/css/main.dac21b4e.chunk.css.map",
+    "static/js/2.7f45e654.chunk.js.LICENSE.txt": "/appvelox/static/js/2.7f45e654.chunk.js.LICENSE.txt",
+    "static/media/authDoctors.057ba16c.svg": "/appvelox/static/media/authDoctors.057ba16c.svg",
+    "static/media/calendare.915c555c.svg": "/appvelox/static/media/calendare.915c555c.svg",
+    "static/media/doctors2.1985024f.png": "/appvelox/static/media/doctors2.1985024f.png",
+    "static/media/nullDoctor.7dfa3551.png": "/appvelox/static/media/nullDoctor.7dfa3551.png",
+    "static/media/successReg.7e175907.svg": "/appvelox/static/media/successReg.7e175907.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.33ce62f2.js",
+    "static/js/2.7f45e654.chunk.js",
+    "static/css/main.dac21b4e.chunk.css",
+    "static/js/main.668ef0e1.chunk.js"
+  ]
+}
