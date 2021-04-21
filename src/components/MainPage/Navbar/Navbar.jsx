@@ -69,7 +69,7 @@ function NavigateItem(props) {
 
 export default function Navbar(props) {
     const location = useLocation();
-    const [currentOption, setCurrentOption] = React.useState(items.findIndex((item, key) => location.pathname.includes(item.path)));
+    const [currentOption, setCurrentOption] = React.useState(items.findIndex((item, key) => location.pathname.includes(item.path))!==-1 ? items.findIndex((item, key) => location.pathname.includes(item.path)) : 0);
 
     const [height, setHeight] = React.useState(0);
     useEffect(() => { setHeight(document.getElementById('navItem0').clientHeight) }, [])
