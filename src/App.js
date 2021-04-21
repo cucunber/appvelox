@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Redirect, Route } from 'react-router';
+import { Redirect, Route, Switch } from 'react-router';
 import s from './App.module.css';
 import Auth from './components/Auth/Auth';
 import MainPage from './components/MainPage/MainPage';
@@ -24,8 +24,11 @@ function App() {
   const initializedUser = useSelector(state => state.profile.intialized)
   return (
     <div className={s.wrapper}>
-      {!initializedUser ? <Auth /> : <Redirect to="/profile"/>}
-      <Route path="/" component={MainPage} />
+      {!initializedUser ? <Redirect to="/auth" /> : <Redirect to="/profile" />}
+      <Switch>
+        <Route path="/auth" component={Auth} />
+        <Route path="/" component={MainPage} />
+      </Switch>
     </div>
   );
 }

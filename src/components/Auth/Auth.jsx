@@ -21,7 +21,7 @@ export default function Auth(props) {
     
     const location = useLocation();
 
-    useEffect(() => location.pathname==="/registration" ? setTheme(true) : setTheme(false), [location.pathname])
+    useEffect(() => location.pathname==="/auth/registration" ? setTheme(true) : setTheme(false), [location.pathname])
 
     return (
         <section className={s.wrapper}>
@@ -36,10 +36,10 @@ export default function Auth(props) {
                     <Header />
                     <div className={s.mainForm}>
                         <Switch>
-                            <Route exact path="/registration" component={Registration} />
-                            <Route exact path="/code" component={Code} />
-                            <Route exact path="/recovery" component={Recovery} />
-                            <Route exact path="/" component={Login} />
+                            <Route exact path="/auth/registration" component={Registration} />
+                            <Route exact path="/auth/code" component={Code} />
+                            <Route exact path="/auth/recovery" component={Recovery} />
+                            <Route exact path="/auth/" component={Login} />
                             <Redirect to="/" />
                         </Switch>
                     </div>
